@@ -1,0 +1,65 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: #1c2430;
+}
+
+.app-shell {
+  display: flex;
+  height: 100%;
+}
+
+.layer-picker {
+  box-sizing: border-box;
+  width: 240px;
+  padding: 20px 16px;
+  border-right: 1px solid #d5dbe3;
+  background: #f7f8fa;
+}
+
+.layer-picker h1 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.layer-picker ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.layer-picker li + li {
+  margin-top: 8px;
+}
+
+.layer-picker button {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #c5ced8;
+  border-radius: 6px;
+  background: #ffffff;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.globe {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.globe .cesium-viewer,
+.globe .cesium-viewer-cesiumWidgetContainer,
+.globe .cesium-widget {
+  width: 100%;
+  height: 100%;
+}
