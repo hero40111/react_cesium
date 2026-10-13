@@ -46,7 +46,6 @@ const europeImagery: ImageryLayerDefinition = {
   boundingBox: { west: -35, south: 34, east: 40, north: 72 },
 };
 
-/** North America, then Europe. Their boxes overlap over the North Atlantic. */
 export const availableImageryLayers: readonly ImageryLayerDefinition[] = [
   northAmericaImagery,
   europeImagery,
