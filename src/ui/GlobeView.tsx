@@ -23,12 +23,14 @@ export function GlobeView() {
   }, []);
 
   let activeLayerId = "";
+  let selectableLayerIds = new Set();
   function choose() {}
 
   return (
     <div className="app-shell">
       <LayerPicker 
         activeLayerId={activeLayerId}
+        selectableLayerIds={selectableLayerIds}
         onChoose={choose}
       />
       <div ref={containerRef} className="globe" />

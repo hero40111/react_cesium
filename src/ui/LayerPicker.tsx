@@ -1,7 +1,7 @@
 import { availableImageryLayers } from "../domain/imageryCatalog";
 import { LayerPickerProps } from "../models/LayerPicker.interface";
 
-export function LayerPicker({ activeLayerId, onChoose }: LayerPickerProps) {
+export function LayerPicker({ activeLayerId, selectableLayerIds, onChoose }: LayerPickerProps) {
   return (
     <aside className="layer-picker">
       <h1>Imagery</h1>
@@ -11,6 +11,7 @@ export function LayerPicker({ activeLayerId, onChoose }: LayerPickerProps) {
             <button
               type="button"
               aria-current={layer.id === activeLayerId ? "true" : undefined}
+              disabled={!selectableLayerIds.has(layer.id)}
               onClick={() => onChoose(layer.id)}
             >{layer.name}</button>
           </li>
