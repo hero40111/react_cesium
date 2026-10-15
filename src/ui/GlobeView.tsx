@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { createViewer } from "../cesium/createViewer";
 import { LayerPicker } from "./LayerPicker";
 import { Viewer } from "cesium";
+import { useImageryControl } from "./ImageryControl.hook";
 
 export function GlobeView() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,16 +23,14 @@ export function GlobeView() {
     };
   }, []);
 
-  let activeLayerId = "";
-  let selectableLayerIds = new Set();
-  function choose() {}
+  const {activeLayerId, selectableLayerIds, choose} = useImageryControl(viewer);
 
   return (
     <div className="app-shell">
       <LayerPicker 
         activeLayerId={activeLayerId}
         selectableLayerIds={selectableLayerIds}
-        onChoose={choose}
+        choose={choose}
       />
       <div ref={containerRef} className="globe" />
     </div>

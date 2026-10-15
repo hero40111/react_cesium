@@ -1,7 +1,7 @@
 import { ImageryLayerId } from "../domain/imageryCatalog";
 
-export interface LayerPickerProps {
+export interface ImageryControl {
     readonly activeLayerId: string;
     readonly selectableLayerIds: ReadonlySet<ImageryLayerId>;
-    readonly onChoose: (id: string) => void;
+    readonly choose: (id: string) => void;
 }

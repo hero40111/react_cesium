@@ -10,7 +10,7 @@ function isInsideBBox(center: MapCenter, box: BoundingBox): boolean {
 }
 
 export function selectableImageryLayers(
-    center: MapCenter,
+    center: MapCenter | undefined,
     layers: readonly ImageryLayerDefinition[],
 ): readonly ImageryLayerDefinition[] {
     if (!center) return [];
