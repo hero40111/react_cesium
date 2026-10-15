@@ -50,3 +50,5 @@ export const availableImageryLayers: readonly ImageryLayerDefinition[] = [
   northAmericaImagery,
   europeImagery,
 ];
+
+export const OPENING_LAYER : ImageryLayerDefinition = northAmericaImagery;
