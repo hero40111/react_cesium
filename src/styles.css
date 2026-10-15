@@ -56,6 +56,11 @@ body {
   background-color: #d5dbe3;
 }
 
+.layer-picker button:disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+
 .globe {
   position: relative;
   flex: 1;
