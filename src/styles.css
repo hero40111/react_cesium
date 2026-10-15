@@ -51,6 +51,11 @@ body {
   cursor: pointer;
 }
 
+.layer-picker button[aria-current="true"] {
+  border-color: #1c2430;
+  background-color: #d5dbe3;
+}
+
 .globe {
   position: relative;
   flex: 1;
