@@ -16,3 +16,15 @@ export function selectableImageryLayers(
     if (!center) return [];
     return layers.filter((layer) => isInsideBBox(center, layer.boundingBox));
 }
+
+export function chooseImageryLayer(
+    activeLayer: ImageryLayerDefinition,
+    layerId: string,
+    center: MapCenter | undefined,
+    layers: readonly ImageryLayerDefinition[]
+): ImageryLayerDefinition {
+    const requestedLayer = selectableImageryLayers(center, layers).find(
+        (layer) => layer.id === layerId
+    );
+    return requestedLayer ?? activeLayer;
+}
