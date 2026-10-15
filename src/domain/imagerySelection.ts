@@ -1,1 +1,18 @@
-export {};
+import { BoundingBox, ImageryLayerDefinition, MapCenter } from "./imageryCatalog";
+
+function isInsideBBox(center: MapCenter, box: BoundingBox): boolean {
+    return (
+        center.longitude >= box.west
+        && center.longitude <= box.east
+        && center.latitude >= box.south
+        && center.latitude <= box.north
+    );
+}
+
+export function selectableImageryLayers(
+    center: MapCenter,
+    layers: readonly ImageryLayerDefinition[],
+): readonly ImageryLayerDefinition[] {
+    if (!center) return [];
+    return layers.filter((layer) => isInsideBBox(center, layer.boundingBox));
+}
