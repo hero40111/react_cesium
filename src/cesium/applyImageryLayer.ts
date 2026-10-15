@@ -15,6 +15,13 @@ export function applyImageryLayer(
     rectangle: Rectangle.fromDegrees(west, south, east, north)
   });
 
+  removeSelectableImagery(viewer.imageryLayers);
+
   viewer.imageryLayers.addImageryProvider(provider, LAYERS_INDEX);
 }
 
+function removeSelectableImagery(imageryLayers: ImageryLayerCollection): void {
+  for(let i = imageryLayers.length -1; i >= LAYERS_INDEX; i--) {
+    imageryLayers.remove(imageryLayers.get(i));
+  }
+}
